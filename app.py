@@ -8,10 +8,10 @@ def Main():
     return 'Hello World'
 
 @app.route('/api/list/', methods=['GET'])
-def GetAll():
+def ApiList():
     if request.method == "GET":
-
-        return 'Get Request Working...'
+        parm = request.args.get('parm')
+        return 'Get Request Working... param='+parm
 
 if __name__ == "__main__":
     app.run(debug = True, host = "0.0.0.0")
